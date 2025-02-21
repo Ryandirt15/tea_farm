@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky id="sky" src="Australian_Tea_Farm_1_360.jpg"></a-sky>
+    </a-scene>
+
+    <script>
+      // Array of your 360 images
+      let images = ["Australian_Tea_Farm_1_360.jpg", "Australian_Tea_Farm_2_360.jpg", "Australian_Tea_Farm_3_360.jpg", "Australian_Tea_Farm_4_360.jpg", "Australian_Tea_Farm_5_360.jpg", "Australian_Tea_Farm_6_360.jpg"];
+      let index = 0;
+
+      // Function to change the image
+      function changeImage() {
+        index = (index + 1) % images.length;
+        document.getElementById("sky").setAttribute("src", images[index]);
+      }
+
+      // Set interval to change the image every 5 seconds
+      setInterval(changeImage, 5000);
+    </script>
+  </body>
+</html>
